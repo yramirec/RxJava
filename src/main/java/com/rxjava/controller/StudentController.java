@@ -56,22 +56,6 @@ public class StudentController {
 			value = "/students", 
 			produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ResponseStatus(HttpStatus.CREATED)
-	@ApiOperation(
-			value = "Registrar Student.", 
-			httpMethod = " POST ", 
-			notes = "classpath:swagger/notes/insurance-create.md")
-	@ApiResponses({ @ApiResponse(
-			code = 201, 
-			message = "Se guardó el registro con exito", 
-			response = Student.class),
-			@ApiResponse(
-					code = 501, 
-					message = "Funcionalidad no implementada.", 
-					response = StudentException.class),
-			@ApiResponse(
-					code = 500,
-					message = " Error al realizar la validación; previa de datos.", 
-					response = StudentException.class) })
 	public Single<Student> save(Student student) {
 		return studentService.save(student);
 	}	
