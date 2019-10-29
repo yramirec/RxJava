@@ -69,8 +69,8 @@ public class StudentController {
 					message = "Funcionalidad no implementada.", 
 					response = StudentException.class),
 			@ApiResponse(
-					code = 500, 
-					message = "Error al realizar la validación; previa de datos.", 
+					code = 500,
+					message = " Error al realizar la validación; previa de datos.", 
 					response = StudentException.class) })
 	public Single<Student> save(Student student) {
 		return studentService.save(student);
